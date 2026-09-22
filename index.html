@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The LPBT Press Club — Est. MMXXVI</title>
+<meta name="description" content="The LPBT Press Club: the newsroom, the desks, the back issues. Independent, unpaid, and mildly over-caffeinated." />
+<meta name="theme-color" content="#f4f1e8" />
+<meta property="og:title" content="The LPBT Press Club" />
+<meta property="og:description" content="The newsroom, the desks, the back issues." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f1e8'/%3E%3Ctext x='50' y='78' font-size='82' font-family='Georgia,serif' font-weight='bold' text-anchor='middle' fill='%23141210'%3EP%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Archivo+Narrow:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ───────────────────────── WIRE TICKER ───────────────────────── -->
+<div class="wire" role="region" aria-label="News ticker">
+  <div class="wire__label">On the wire</div>
+  <div class="wire__track" id="wire-track"><!-- filled by JS --></div>
+</div>
+
+<!-- ───────────────────────── MASTHEAD ───────────────────────── -->
+<header class="masthead">
+  <div class="shell">
+    <div class="masthead__rule" aria-hidden="true"></div>
+
+    <div class="masthead__grid">
+      <div class="ear ear--left">
+        <span class="ear__k">Volume I</span>
+        <span class="ear__v">No. 07</span>
+        <span class="ear__k">Circulation</span>
+        <span class="ear__v">One very loyal reader</span>
+      </div>
+
+      <div class="masthead__center">
+        <p class="masthead__kicker">Independent &middot; Unpaid &middot; Unedited after 2&nbsp;a.m.</p>
+        <h1 class="masthead__title">The LPBT Press Club</h1>
+        <p class="masthead__motto">&ldquo;All the news we could be bothered to confirm.&rdquo;</p>
+      </div>
+
+      <div class="ear ear--right">
+        <span class="ear__k">Edition</span>
+        <span class="ear__v" id="issue-date">Late Edition</span>
+        <span class="ear__k">Price</span>
+        <span class="ear__v">Free &mdash; it&rsquo;s a website</span>
+      </div>
+    </div>
+
+    <div class="masthead__rule masthead__rule--double" aria-hidden="true"></div>
+  </div>
+</header>
+
+<!-- ───────────────────────── NAV ───────────────────────── -->
+<nav class="nav" id="nav" aria-label="Sections">
+  <div class="shell nav__inner">
+    <span class="nav__brand">LPBT&nbsp;PC</span>
+    <ul class="nav__list">
+      <li><a href="#front-page">Front&nbsp;Page</a></li>
+      <li><a href="#newsroom">The&nbsp;Newsroom</a></li>
+      <li><a href="#desks">Desks</a></li>
+      <li><a href="#archive">Back&nbsp;Issues</a></li>
+      <li><a href="#dispatches">Dispatches</a></li>
+      <li><a href="#letters">Letters</a></li>
+    </ul>
+    <a class="nav__cta" href="https://www.admonymous.co/not-so-lain" target="_blank" rel="noopener">Tip&nbsp;the&nbsp;editor</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ───────────────────────── FRONT PAGE ───────────────────────── -->
+<section class="section" id="front-page">
+  <div class="shell">
+    <div class="front">
+
+      <article class="lead">
+        <p class="kicker kicker--red">From the Editor&rsquo;s Desk</p>
+        <h2 class="lead__hed">Press Club Opens Its Doors, <br /> Promises Nothing But Words</h2>
+        <p class="lead__dek">A loose federation of writers, coders and insomniacs has declared itself a
+          newsroom. No printing press was harmed in the process.</p>
+        <p class="byline">By <strong>The Standing Committee</strong> &middot; <span class="byline__loc">LPBT Newsroom</span></p>
+
+        <div class="lead__body">
+          <p>The <strong>LPBT Press Club</strong> is a volunteer newsroom: a place where members of our
+            communities write, edit, illustrate and argue in public. There is no advertising department, no
+            shareholder call, and no editorial line beyond <em>be interesting and be honest</em>.</p>
+          <p>Work is organised into <a href="#desks">desks</a> &mdash; each with its own colour, its own
+            temperament, and its own standards for what counts as a story. Members may sit at as many desks
+            as they can carry. The people currently holding the pens are listed in
+            <a href="#newsroom">The Newsroom</a>; everything we have already published is filed in
+            <a href="#archive">Back Issues</a>.</p>
+          <p>Corrections, compliments and unhinged complaints are all welcome, and all anonymous. The
+            <a href="#letters">letters box</a> does not record who you are &mdash; which has historically
+            improved the quality of the letters.</p>
+        </div>
+      </article>
+
+      <aside class="rail" aria-label="In this issue">
+        <h3 class="rail__hed">In This Issue</h3>
+        <ol class="rail__list">
+          <li><a href="#newsroom"><span class="rail__num">A1</span> Who is in the newsroom</a></li>
+          <li><a href="#desks"><span class="rail__num">B1</span> The desks &amp; their colour codes</a></li>
+          <li><a href="#archive"><span class="rail__num">C1</span> Everything we have run so far</a></li>
+          <li><a href="#dispatches"><span class="rail__num">D1</span> Dispatches from the members</a></li>
+          <li><a href="#letters"><span class="rail__num">E1</span> Letters to the Editor</a></li>
+        </ol>
+
+        <div class="rail__stats" id="rail-stats" aria-live="polite"><!-- filled by JS --></div>
+
+        <div class="box box--weather">
+          <p class="box__hed">Newsroom Forecast</p>
+          <p class="box__body">Overcast with scattered deadlines. Coffee pressure falling. Chance of a
+            last-minute rewrite: <strong>100%</strong>.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── NEWSROOM / STAFF ───────────────────────── -->
+<section class="section section--ruled" id="newsroom">
+  <div class="shell">
+    <header class="sechead">
+      <p class="sechead__label">Section A</p>
+      <h2 class="sechead__hed">The Newsroom</h2>
+      <p class="sechead__dek">Identities of staff, their desks, and what they are responsible for.</p>
+    </header>
+
+    <div class="filters" data-filter-for="staff">
+      <p class="filters__legend" id="staff-filter-legend">Filter by desk</p>
+      <div class="filters__chips" role="group" aria-labelledby="staff-filter-legend" id="staff-filters"><!-- JS --></div>
+      <p class="filters__count" id="staff-count" aria-live="polite"></p>
+    </div>
+
+    <div class="staff-grid" id="staff-grid"><!-- JS --></div>
+    <p class="empty" id="staff-empty" hidden>No staff at the selected desks. The office is empty; the coffee is not.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────── DESKS / COMMUNITIES ───────────────────────── -->
+<section class="section section--ruled" id="desks">
+  <div class="shell">
+    <header class="sechead">
+      <p class="sechead__label">Section B</p>
+      <h2 class="sechead__hed">Desks &amp; Colour Codes</h2>
+      <p class="sechead__dek">Every community runs a desk. Every desk owns a colour. Click a swatch to copy
+        its hex code.</p>
+    </header>
+
+    <div class="desk-grid" id="desk-grid"><!-- JS --></div>
+  </div>
+</section>
+
+<!-- ───────────────────────── ARCHIVE / EVENTS ───────────────────────── -->
+<section class="section section--ruled" id="archive">
+  <div class="shell">
+    <header class="sechead">
+      <p class="sechead__label">Section C</p>
+      <h2 class="sechead__hed">Back Issues</h2>
+      <p class="sechead__dek">Previous events, in reverse chronological order, with the desk that ran them.</p>
+    </header>
+
+    <div class="filters" data-filter-for="events">
+      <p class="filters__legend" id="event-filter-legend">Filter by desk</p>
+      <div class="filters__chips" role="group" aria-labelledby="event-filter-legend" id="event-filters"><!-- JS --></div>
+      <p class="filters__count" id="event-count" aria-live="polite"></p>
+    </div>
+
+    <div class="archive" id="event-list"><!-- JS --></div>
+    <p class="empty" id="event-empty" hidden>Nothing in the archive for those desks. Slow news century.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────── DISPATCHES / BLOG ───────────────────────── -->
+<section class="section section--ruled" id="dispatches">
+  <div class="shell">
+    <header class="sechead">
+      <p class="sechead__label">Section D</p>
+      <h2 class="sechead__hed">Dispatches</h2>
+      <p class="sechead__dek">Posts filed by members, newest first. Each one is an MDX file in the
+        <span class="mono">blogs/</span> folder, typeset on every deploy.</p>
+    </header>
+
+    <div class="filters" data-filter-for="posts">
+      <p class="filters__legend" id="post-filter-legend">Filter by desk</p>
+      <div class="filters__chips" role="group" aria-labelledby="post-filter-legend" id="post-filters"><!-- JS --></div>
+      <p class="filters__count" id="post-count" aria-live="polite"></p>
+    </div>
+
+    <div class="dispatches" id="post-list"><!-- JS, from blogs/posts.json --></div>
+    <p class="empty" id="post-empty" hidden>No dispatches from those desks yet. The typewriters are warming up.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────── LETTERS ───────────────────────── -->
+<section class="section section--ruled" id="letters">
+  <div class="shell">
+    <header class="sechead">
+      <p class="sechead__label">Section E</p>
+      <h2 class="sechead__hed">Letters to the Editor</h2>
+      <p class="sechead__dek">Unsigned, unfiltered, and genuinely read.</p>
+    </header>
+
+    <div class="letters">
+      <div class="letters__note">
+        <p class="letters__typed">To the Editor,</p>
+        <p>We accept anonymous letters, tips, corrections and grievances. Nothing you send is linked to your
+          name, your account, or your reputation &mdash; we receive the words and nothing else.</p>
+        <p>Useful things to send us: a story we got wrong, a story we missed, a desk you want opened, or a
+          sentence you think we should be ashamed of.</p>
+        <p class="letters__typed letters__typed--sign">&mdash; Management</p>
+      </div>
+
+      <div class="letters__cta">
+        <p class="stamp">Postage<br />Paid</p>
+        <a class="btn" href="https://www.admonymous.co/not-so-lain" target="_blank" rel="noopener">
+          Send an anonymous letter
+        </a>
+        <p class="letters__fine">Opens <span class="mono">admonymous.co/not-so-lain</span> in a new tab.
+          No account, no e-mail, no trace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────────────────── FOOTER ───────────────────────── -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__rule" aria-hidden="true"></div>
+    <div class="footer__grid">
+      <div>
+        <p class="footer__hed">The LPBT Press Club</p>
+        <p>Published irregularly. Set in Playfair Display, Libre Baskerville and Archivo Narrow.
+          Printed on GitHub Pages.</p>
+      </div>
+      <div>
+        <p class="footer__hed">Colophon</p>
+        <p>Staff portraits are placeholders from the
+          <a href="https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books" target="_blank" rel="noopener">Anime&nbsp;Girls&nbsp;Holding&nbsp;Programming&nbsp;Books</a>
+          collection, used until real ones arrive.</p>
+      </div>
+      <div>
+        <p class="footer__hed">Contact</p>
+        <p><a href="https://www.admonymous.co/not-so-lain" target="_blank" rel="noopener">Anonymous letters &rarr;</a></p>
+        <p class="mono footer__small">&copy; <span id="year">2026</span> LPBT Press Club</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
