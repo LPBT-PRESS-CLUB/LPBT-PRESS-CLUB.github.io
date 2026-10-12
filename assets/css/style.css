@@ -435,7 +435,8 @@ a:hover { color: var(--red); }
   background: var(--paper-3);
 }
 .card__figure img {
-  width: 100%; height: 100%; object-fit: cover;
+  /* contain, not cover: portraits aren't square and faces must not be cropped */
+  width: 100%; height: 100%; object-fit: contain;
   /* halftone-ish print look; resolves to full colour on hover */
   filter: grayscale(1) contrast(1.16) sepia(.28) brightness(1.02);
   transition: filter .35s ease, transform .45s ease;

@@ -58,9 +58,9 @@
           '<div class="card__body">' +
             '<p class="card__role">' + esc(p.role) + '</p>' +
             '<h3 class="card__name">' + esc(p.name) + '</h3>' +
-            '<p class="card__handle mono">' + esc(p.handle) + '</p>' +
-            '<p class="card__beat"><span class="card__k">Beat</span> ' + esc(p.beat) + '</p>' +
-            '<p class="card__bio">' + esc(p.bio) + '</p>' +
+            (p.handle ? '<p class="card__handle mono">' + esc(p.handle) + '</p>' : '') +
+            (p.beat ? '<p class="card__beat"><span class="card__k">Beat</span> ' + esc(p.beat) + '</p>' : '') +
+            (p.bio ? '<p class="card__bio">' + esc(p.bio) + '</p>' : '') +
             '<div class="card__tags">' + p.desks.map(tagHTML).join('') +
               '<span class="card__since mono">since ' + esc(p.since) + '</span>' +
             '</div>' +

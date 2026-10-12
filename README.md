@@ -53,12 +53,12 @@ sections, and to the staff/event counts on its swatch card.
 ```js
 {
   name: 'Lain',
-  handle: '@not-so-lain',
+  handle: '@not-so-lain',       // optional
   role: 'Editor-in-Chief',
   desks: ['tech', 'opinion'],   // one or more desk ids; the first sets the accent colour
   since: '2026',
-  beat: 'Everything, eventually',
-  bio: 'One or two sentences.',
+  beat: 'Everything, eventually',   // optional
+  bio: 'One or two sentences.',     // optional
   img: IMG + 'Go/Iwakura_Lain_Reading_Introducing_Go.png',
   alt: 'Describe the image for screen readers.',
 }
@@ -104,12 +104,12 @@ Available components: `<PullQuote>`. Add more in the `components` object in `scr
 The build fails, and the deploy stops, if a post is missing `title`/`date`, names an unknown
 desk, or contains invalid MDX. The error names the file.
 
-## Placeholder portraits
+## Staff portraits
 
-Staff photos are **placeholders** served from
-[cat-milk/Anime-Girls-Holding-Programming-Books](https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books)
-via `raw.githubusercontent.com` (the `IMG` prefix in `data.js`). To use real images, drop them in
-`assets/img/` and point `img` at `assets/img/your-file.png`.
+Staff photos are served from the club's Google Drive folder via
+`lh3.googleusercontent.com/d/<file-id>` (the `IMG` prefix in `data.js`); the `=w800` suffix asks
+Drive for an 800px-wide copy. The files must stay shared as "Anyone with the link". To host an
+image in the repo instead, drop it in `assets/img/` and point `img` at `assets/img/your-file.png`.
 
 ## Local preview
 

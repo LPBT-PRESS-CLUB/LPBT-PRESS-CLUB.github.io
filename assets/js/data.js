@@ -2,9 +2,8 @@
    LPBT Press Club — site content
    ----------------------------------------------------------------------------
    This is the only file you need to edit to change what the site says.
-   Everything below is PLACEHOLDER copy: swap in the real desks, staff and
-   events. Portraits are placeholders pulled from
-   github.com/cat-milk/Anime-Girls-Holding-Programming-Books
+   Staff are real; desks and events are still PLACEHOLDER copy.
+   Portraits are served from the club's Google Drive folder.
    ========================================================================== */
 
 /* Ticker headlines running along the top of the page. */
@@ -75,119 +74,90 @@ const DESKS = [
 /* ----------------------------------------------------------------------------
    STAFF — identities of the newsroom.
    `desks` holds one or more desk ids from DESKS above.
+   `handle`, `beat` and `bio` are optional and only shown when set.
    -------------------------------------------------------------------------- */
-const IMG = 'https://raw.githubusercontent.com/cat-milk/Anime-Girls-Holding-Programming-Books/master/';
+const IMG = 'https://lh3.googleusercontent.com/d/';
 
 const STAFF = [
   {
-    name: 'Lain',
-    handle: '@not-so-lain',
-    role: 'Editor-in-Chief',
-    desks: ['tech', 'opinion'],
-    since: '2026',
-    beat: 'Everything, eventually',
-    bio: 'Runs the front page, signs off the final proof, and answers the letters box personally.',
-    img: IMG + 'Go/Iwakura_Lain_Reading_Introducing_Go.png',
-    alt: 'Placeholder portrait: an illustrated character reading a Go programming book.',
-  },
-  {
-    name: 'Anya',
-    handle: '@anya',
-    role: 'Junior Correspondent',
+    name: 'Soujoud Ouerghi',
+    role: 'President',
     desks: ['newsdesk'],
     since: '2026',
-    beat: 'Announcements & rumours',
-    bio: 'First on the wire, last to file. Has never once missed a piece of gossip worth printing.',
-    img: IMG + 'Python/Anya_with_python_book.png',
-    alt: 'Placeholder portrait: an illustrated character holding a Python book.',
+    img: IMG + '10WQgEvwYft03RhiAaFOPs2IkOwCoRDe6=w800',
+    alt: 'Portrait of Soujoud Ouerghi, President.',
   },
   {
-    name: 'Mio',
-    handle: '@mio',
-    role: 'Copy Chief',
-    desks: ['arts', 'opinion'],
-    since: '2026',
-    beat: 'Style, grammar, mercy',
-    bio: 'Keeper of the style guide. Will delete your semicolon and will not apologise for it.',
-    img: IMG + 'Rust/Akiyama_Mio_Holding_The_Rust_Programming_Language.png',
-    alt: 'Placeholder portrait: an illustrated character holding The Rust Programming Language.',
-  },
-  {
-    name: 'Mokou',
-    handle: '@mokou',
-    role: 'Night Editor',
+    name: 'Yosr Romdhani',
+    role: 'Vice President',
     desks: ['newsdesk'],
     since: '2026',
-    beat: 'The 3 a.m. shift',
-    bio: 'Holds the desk while everyone else sleeps. Files clean copy at hours that should not produce clean copy.',
-    img: IMG + 'Haskell/Fujiwara_No_Mokou_LYAHFGG.png',
-    alt: 'Placeholder portrait: an illustrated character holding a Haskell book.',
+    img: IMG + '1xnBHh59q3-8RbOzdQb2VqHWYhHyu2_-e=w800',
+    alt: 'Portrait of Yosr Romdhani, Vice President.',
   },
   {
-    name: 'Isana',
-    handle: '@isana',
-    role: 'Systems & Print Ops',
-    desks: ['tech'],
+    name: 'Anas Ghazeil',
+    role: 'Head of Protocol',
+    desks: ['newsdesk'],
     since: '2026',
-    beat: 'Deploys, pipelines, uptime',
-    bio: 'Keeps the presses running. If the site is up, thank this desk; if it is down, it is already being fixed.',
-    img: IMG + 'Linux/Isana_Higashira_Holding_The_Linux_Command_Line.png',
-    alt: 'Placeholder portrait: an illustrated character holding The Linux Command Line.',
+    img: IMG + '1pp7WCn1Q8ZmiPoG3nN4FqHfi9axS_vVk=w800',
+    alt: 'Portrait of Anas Ghazeil, Head of Protocol.',
   },
   {
-    name: 'Konata',
-    handle: '@konata',
-    role: 'Columnist',
-    desks: ['opinion', 'tech'],
+    name: 'Moemen Arfeoui',
+    role: 'General Secretary',
+    desks: ['newsdesk'],
     since: '2026',
-    beat: 'Weekly column, strong views',
-    bio: 'Writes the column everyone claims not to read and everyone quotes by Wednesday.',
-    img: IMG + 'Typescript/Izumi_Konata_Essential_Typescript.png',
-    alt: 'Placeholder portrait: an illustrated character holding Essential TypeScript.',
+    img: IMG + '1t4oa51yEiAWYzNOQ_vK2VNGYDruCMEf6=w800',
+    alt: 'Portrait of Moemen Arfeoui, General Secretary.',
   },
   {
-    name: 'Sophie',
-    handle: '@sophie',
-    role: 'Critic-at-Large',
+    name: 'Yassmine Khili',
+    role: 'Assistant General Secretary',
+    desks: ['newsdesk'],
+    since: '2026',
+    img: IMG + '1BVJOI8pqHAIzykAwZ2aF_sqL6i28sVXz=w800',
+    alt: 'Portrait of Yassmine Khili, Assistant General Secretary.',
+  },
+  {
+    name: 'Nour El Houdee Bchini',
+    role: 'Treasurer',
+    desks: ['newsdesk'],
+    since: '2026',
+    img: IMG + '1RhcV0420TSg_-0dhlJnfv-8tClsxpx7F=w800',
+    alt: 'Portrait of Nour El Houdee Bchini, Treasurer.',
+  },
+  {
+    name: 'Farah Ben Hamida',
+    role: 'Human Resources Manager',
+    desks: ['newsdesk'],
+    since: '2026',
+    img: IMG + '1cv1h7NGMqsvyp5jWx-tW6nkyLklmSGAG=w800',
+    alt: 'Portrait of Farah Ben Hamida, Human Resources Manager.',
+  },
+  {
+    name: 'Israa Ben Amor',
+    role: 'Head of Media & Communications',
+    desks: ['photo'],
+    since: '2026',
+    img: IMG + '1U3WptGp8Ng5grcxHb44FLjj1E5vEh753=w800',
+    alt: 'Portrait of Israa Ben Amor, Head of Media & Communications.',
+  },
+  {
+    name: 'Mouhamed Adem Fetni',
+    role: 'Committees Coordinator',
+    desks: ['newsdesk'],
+    since: '2026',
+    img: IMG + '1oDe8c8FdsOf9kG99dpo0rRXPmEfyHbRz=w800',
+    alt: 'Portrait of Mouhamed Adem Fetni, Committees Coordinator.',
+  },
+  {
+    name: 'Fares Mogaadi',
+    role: 'Art Director',
     desks: ['arts'],
     since: '2026',
-    beat: 'Reviews & long reads',
-    bio: 'Reviews the thing, then reviews the assumptions behind the thing. Word counts are a suggestion.',
-    img: IMG + 'Lisp/Sophie_Neuenmuller_Land_of_Lisp.png',
-    alt: 'Placeholder portrait: an illustrated character holding Land of Lisp.',
-  },
-  {
-    name: 'Eru',
-    handle: '@eru',
-    role: 'Investigations',
-    desks: ['newsdesk', 'tech'],
-    since: '2026',
-    beat: 'Long-running inquiries',
-    bio: 'Asks the second question. Maintains a notebook nobody else is permitted to read.',
-    img: IMG + 'Javascript/Chitanda_Eru_Holding_Programming_Books_With_Deno_Manual_On_The_Top.png',
-    alt: 'Placeholder portrait: an illustrated character holding a stack of programming books.',
-  },
-  {
-    name: 'Reina',
-    handle: '@reina',
-    role: 'Photo Editor',
-    desks: ['photo', 'arts'],
-    since: '2026',
-    beat: 'Portraits & event coverage',
-    bio: 'Decides which image runs above the fold, and crops it without consulting anyone.',
-    img: IMG + 'C/Aharen_Reina_Holding_C_Programming_Language.png',
-    alt: 'Placeholder portrait: an illustrated character holding The C Programming Language.',
-  },
-  {
-    name: 'Alice',
-    handle: '@alice',
-    role: 'Sports Desk Lead',
-    desks: ['sports'],
-    since: '2026',
-    beat: 'Brackets & results',
-    bio: 'Maintains the standings table and treats every friendly match as a matter of historical record.',
-    img: IMG + 'Java/Alice_Kuonji_Java_8.png',
-    alt: 'Placeholder portrait: an illustrated character holding a Java book.',
+    img: IMG + '1ZlY7Lz9mroVjBRexViLWRk726KQ8LccB=w800',
+    alt: 'Portrait of Fares Mogaadi, Art Director.',
   },
 ];
 
