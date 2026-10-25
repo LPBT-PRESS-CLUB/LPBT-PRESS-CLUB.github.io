@@ -46,7 +46,7 @@ const components = {
     createElement('blockquote', { className: 'pullquote' }, createElement('p', null, children)),
 };
 
-/* ── Helpers ───────────────────────────────────────────────────────────── */
+/* ── Helpers ──────────────────────────────────────────────────────────── */
 const esc = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
@@ -84,10 +84,10 @@ function postPage(post, html, desk) {
 <meta property="og:description" content="${esc(post.dek)}" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="${post.date}" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f1e8'/%3E%3Ctext x='50' y='78' font-size='82' font-family='Georgia,serif' font-weight='bold' text-anchor='middle' fill='%23141210'%3EP%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f1e8'/%3E%3Ctext x='50' y='78' font-size='82[...]
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Archivo+Narrow:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Archivo+[...]
 <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 <body>
@@ -151,10 +151,13 @@ ${html}
 `;
 }
 
-/* ── Build ─────────────────────────────────────────────────────────────── */
+/* ── Build ─────────────────────────────────────────────────────────── */
 async function buildPosts(desks) {
   if (!existsSync(BLOG_SRC)) return [];
-  const files = (await readdir(BLOG_SRC)).filter((f) => f.toLowerCase().endsWith('.mdx')).sort();
+  const files = (await readdir(BLOG_SRC))
+    .filter((f) => f.toLowerCase().endsWith('.mdx'))
+    .filter((f) => f !== 'we-launched-our-website.mdx')
+    .sort();
   const posts = [];
   const seen = new Map();
 
