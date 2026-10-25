@@ -96,10 +96,10 @@ function postPage(post, html, desks) {
 <meta property="og:description" content="${esc(post.dek)}" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="${post.date}" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f1e8'/%3E%3Ctext x='50' y='78' font-size='82[...]
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f1e8'/%3E%3Ctext x='50' y='78' font-size='82' font-family='Georgia, serif' fill='%23000000'%3ELP%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Archivo+[...]
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Archivo+Narrow:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 <body>

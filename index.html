@@ -65,6 +65,7 @@
       <li><a href="#newsroom">The&nbsp;Newsroom</a></li>
       <li><a href="#desks">Desks</a></li>
       <li><a href="#archive">Back&nbsp;Issues</a></li>
+      <li><a href="#dispatches">Dispatches</a></li>
       <li><a href="#letters">Letters</a></li>
     </ul>
     <a class="nav__cta" href="https://www.admonymous.co/not-so-lain" target="_blank" rel="noopener">Tip&nbsp;the&nbsp;editor</a>
@@ -106,7 +107,8 @@
           <li><a href="#newsroom"><span class="rail__num">A1</span> Who is in the newsroom</a></li>
           <li><a href="#desks"><span class="rail__num">B1</span> The desks &amp; their colour codes</a></li>
           <li><a href="#archive"><span class="rail__num">C1</span> Everything we have run so far</a></li>
-          <li><a href="#letters"><span class="rail__num">D1</span> Letters to the Editor</a></li>
+          <li><a href="#dispatches"><span class="rail__num">D1</span> Dispatches from the members</a></li>
+          <li><a href="#letters"><span class="rail__num">E1</span> Letters to the Editor</a></li>
         </ol>
 
         <div class="rail__stats" id="rail-stats" aria-live="polite"><!-- filled by JS --></div>
@@ -176,11 +178,31 @@
   </div>
 </section>
 
+<!-- ───────────────────────── DISPATCHES / BLOG ───────────────────────── -->
+<section class="section section--ruled" id="dispatches">
+  <div class="shell">
+    <header class="sechead">
+      <p class="sechead__label">Section D</p>
+      <h2 class="sechead__hed">Dispatches</h2>
+      <p class="sechead__dek">Posts filed by members, newest first.</p>
+    </header>
+
+    <div class="filters" data-filter-for="posts">
+      <p class="filters__legend" id="post-filter-legend">Filter by desk</p>
+      <div class="filters__chips" role="group" aria-labelledby="post-filter-legend" id="post-filters"><!-- JS --></div>
+      <p class="filters__count" id="post-count" aria-live="polite"></p>
+    </div>
+
+    <div class="dispatches" id="post-list"><!-- JS, from blogs/posts.json --></div>
+    <p class="empty" id="post-empty" hidden>No dispatches from those desks yet. The typewriters are warming up.</p>
+  </div>
+</section>
+
 <!-- ───────────────────────── LETTERS ───────────────────────── -->
 <section class="section section--ruled" id="letters">
   <div class="shell">
     <header class="sechead">
-      <p class="sechead__label">Section D</p>
+      <p class="sechead__label">Section E</p>
       <h2 class="sechead__hed">Letters to the Editor</h2>
       <p class="sechead__dek">Unsigned, unfiltered, and genuinely read.</p>
     </header>

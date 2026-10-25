@@ -13,6 +13,8 @@ assets/js/data.js       ← all site content lives here
 assets/js/main.js       rendering, desk filters, copy-to-clipboard
 blogs/*.mdx             ← dispatches (blog posts), one file per post
 scripts/build.mjs       builds _site/: copies the site, compiles blogs/*.mdx
+scripts/dev.mjs         dev server: rebuilds on save, reloads the browser
+scripts/new-post.mjs    npm run new: scaffolds a blogs/*.mdx post
 .nojekyll               serve files verbatim (no Jekyll processing)
 .github/workflows/pages.yml   builds + deploys to GitHub Pages
 ```
@@ -124,12 +126,16 @@ image in the repo instead, drop it in `assets/img/` and point `img` at `assets/i
 
 ## Local preview
 
-Requires Node 20+ and Python (for the preview server).
+Requires Node 20+ (and Python, only for `npm run preview`).
 
 ```sh
 npm install        # once
-npm run preview    # builds _site/ and serves it at http://localhost:8000
+npm run dev        # serves http://localhost:8000, rebuilds on save and reloads the browser
+npm run preview    # one-off build of _site/, served with Python
 ```
+
+`npm run dev` only needs Node. It watches `blogs/`, `assets/` and `index.html`. If a post has an
+error, the error is printed and the server keeps running; fix the post and save again.
 
 Serving the repo root directly still works for everything except Dispatches, which only exist
 after a build.
