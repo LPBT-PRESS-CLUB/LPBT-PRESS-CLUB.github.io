@@ -129,11 +129,15 @@
   function renderPosts(posts) {
     $('#post-list').innerHTML = posts.map(function (p) {
       var d = deskById[p.desk] || { color: '#141210' };
+      var desks = p.desks || (p.desk ? [p.desk] : []);
+      var tags = (p.tags || desks).map(function (t) {
+        return deskById[t] ? tagHTML(t) : '<span class="tag tag--plain">' + esc(t) + '</span>';
+      }).join('');
       return '' +
-        '<article class="dispatch" data-desks="' + esc(p.desk || '') + '" style="--accent:' + d.color + '">' +
+        '<article class="dispatch" data-desks="' + esc(desks.join(' ')) + '" style="--accent:' + d.color + '">' +
           '<div class="dispatch__meta">' +
             '<time class="story__date mono" datetime="' + esc(p.date) + '">' + dateline(p.date) + '</time>' +
-            (p.desk ? tagHTML(p.desk) : '') +
+            tags +
           '</div>' +
           '<h3 class="dispatch__hed"><a href="' + esc(p.url) + '">' + esc(p.title) + '</a></h3>' +
           (p.dek ? '<p class="dispatch__dek">' + esc(p.dek) + '</p>' : '') +

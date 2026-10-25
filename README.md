@@ -80,18 +80,24 @@ sections, and to the staff/event counts on its swatch card.
 
 ## Writing a dispatch (blog post)
 
-Add a `.mdx` file to `blogs/`. The file name becomes the URL
-(`blogs/we-launched-our-website.mdx` → `/blogs/we-launched-our-website/`). On every deploy the
-build scans `blogs/`, typesets each file into its own page, and lists it in **Dispatches** on the
-front page. No HTML edits needed.
+Scaffold a new post:
+
+```sh
+npm run new -- "Our First Bake Sale" --tags newsdesk,events
+```
+
+This creates `blogs/our-first-bake-sale.mdx` with today's date. The file name becomes the URL
+(`/blogs/our-first-bake-sale/`). New posts start with `draft: true`, so they don't get published
+until you delete that line. You can also just write the `.mdx` file yourself:
 
 ```mdx
 ---
-title: We Launched Our Website     # required
-date: 2026-09-22                   # required, YYYY-MM-DD; the list sorts on this
-desk: newsdesk                     # optional, must be a desk id from data.js
-author: The Standing Committee     # optional
+title: Our First Bake Sale          # required
+date: 2026-10-25                    # required, YYYY-MM-DD; the list sorts on this
+tags: [newsdesk, events]            # optional
+author: The Standing Committee      # optional
 dek: One-line summary shown under the headline.   # optional
+draft: true                         # optional; drafts are skipped by the build
 ---
 
 Regular **Markdown** works: headings, lists, links, `code`, images.
@@ -99,10 +105,15 @@ Regular **Markdown** works: headings, lists, links, `code`, images.
 <PullQuote>MDX components work too.</PullQuote>
 ```
 
+**Tags** can be any words. A tag that matches a desk id from `data.js` (`newsdesk`, `tech`,
+`arts`, …) is shown in that desk's colour and makes the post appear under that desk's filter.
+Other tags are shown as plain outlined labels. The older `desk: tech` field still works and
+counts as a tag.
+
 Available components: `<PullQuote>`. Add more in the `components` object in `scripts/build.mjs`.
 
-The build fails, and the deploy stops, if a post is missing `title`/`date`, names an unknown
-desk, or contains invalid MDX. The error names the file.
+The build fails, and the deploy stops, if a post is missing `title`/`date`, has a `desk:` that
+isn't a desk id, or contains invalid MDX. The error names the file.
 
 ## Staff portraits
 

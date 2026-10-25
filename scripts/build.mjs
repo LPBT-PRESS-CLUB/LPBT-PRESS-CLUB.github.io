@@ -68,10 +68,22 @@ function slugify(file) {
 }
 
 /* ── Post page template ────────────────────────────────────────────────── */
-function postPage(post, html, desk) {
-  const tag = desk
-    ? `<span class="tag" style="--tag:${desk.color};--tag-ink:${desk.ink}">${esc(desk.name)}</span>`
-    : '';
+function tagHTML(tag, desks) {
+  const d = desks[tag];
+  return d
+    ? `<span class="tag" style="--tag:${d.color};--tag-ink:${d.ink}">${esc(d.name)}</span>`
+    : `<span class="tag tag--plain">${esc(tag)}</span>`;
+}
+
+// `tags: [tech, launch]` or `tags: tech, launch`; the older `desk:` field still counts as a tag.
+function readTags(data) {
+  const list = Array.isArray(data.tags) ? data.tags : String(data.tags ?? '').split(',');
+  const tags = [data.desk, ...list].map((t) => String(t ?? '').trim().toLowerCase()).filter(Boolean);
+  return [...new Set(tags)];
+}
+
+function postPage(post, html, desks) {
+  const tag = post.tags.map((t) => tagHTML(t, desks)).join(' ');
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,7 +168,6 @@ async function buildPosts(desks) {
   if (!existsSync(BLOG_SRC)) return [];
   const files = (await readdir(BLOG_SRC))
     .filter((f) => f.toLowerCase().endsWith('.mdx'))
-    .filter((f) => f !== 'we-launched-our-website.mdx')
     .sort();
   const posts = [];
   const seen = new Map();
@@ -165,6 +176,10 @@ async function buildPosts(desks) {
     const rel = `blogs/${file}`;
     const raw = await readFile(path.join(BLOG_SRC, file), 'utf8');
     const { data, content } = matter(raw);
+    if (data.draft) {
+      console.log(`  – ${rel} (draft, skipped)`);
+      continue;
+    }
 
     if (!data.title) throw new Error(`${rel}: frontmatter is missing "title"`);
     if (!data.date) throw new Error(`${rel}: frontmatter is missing "date"`);
@@ -172,6 +187,7 @@ async function buildPosts(desks) {
       throw new Error(`${rel}: unknown desk "${data.desk}" (expected one of: ${Object.keys(desks).join(', ')})`);
     }
 
+    const tags = readTags(data);
     const slug = slugify(file);
     if (seen.has(slug)) throw new Error(`${rel}: slug "${slug}" collides with ${seen.get(slug)}`);
     seen.set(slug, rel);
@@ -190,14 +206,16 @@ async function buildPosts(desks) {
       url: `blogs/${slug}/`,
       title: String(data.title),
       date: isoDate(data.date, rel),
-      desk: data.desk || null,
+      desk: tags.find((t) => desks[t]) || null,   // first desk tag sets the accent colour
+      desks: tags.filter((t) => desks[t]),
+      tags,
       author: data.author ? String(data.author) : 'The LPBT Press Club',
       dek: data.dek ? String(data.dek) : '',
       minutes: Math.max(1, Math.round(words / 220)),
     };
 
     await mkdir(path.join(BLOG_OUT, slug), { recursive: true });
-    await writeFile(path.join(BLOG_OUT, slug, 'index.html'), postPage(post, html, desks[post.desk]));
+    await writeFile(path.join(BLOG_OUT, slug, 'index.html'), postPage(post, html, desks));
     posts.push(post);
     console.log(`  ✓ ${rel} → _site/${post.url}`);
   }

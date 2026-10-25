@@ -493,6 +493,8 @@ a:hover { color: var(--red); }
   text-transform: uppercase; letter-spacing: .1em;
   font-size: .6rem; padding: .16rem .45rem;
 }
+/* Free-form tags (not a desk id): outlined instead of filled */
+.tag--plain { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
 
 /* ───────────────────────── DESKS ───────────────────────── */
 .desk-grid {
@@ -639,7 +641,7 @@ a:hover { color: var(--red); }
   border-bottom: 1px solid var(--rule);
   padding-bottom: 1.2rem; margin-bottom: 1.8rem;
 }
-.post__head .kicker { display: inline-flex; align-items: center; gap: .6rem; }
+.post__head .kicker { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
 .post__hed {
   font-family: var(--display); font-weight: 900;
   font-size: clamp(2.1rem, 6vw, 3.6rem);
